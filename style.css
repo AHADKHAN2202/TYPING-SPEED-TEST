@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #ecf7f9;
+    /* background-color: #000; */
+}
+.wrapper-div{
+    background: linear-gradient(160deg,rgb(100%, 84.3%, 0% ),#FFDE2E );
+    color: #fff;
+    width: 800px;
+    border-radius: 10px;
+    padding: 30px;
+    position: relative;
+    text-shadow: 0 0 2px rgb(0,0,0,0.5);
+    box-shadow: 0 0 10px rgb(0,0,0,1);
+}
+
+.input-area{
+    z-index:900;
+    position: absolute;
+}
+.content-div .space-of-typing{
+    max-width: 600px;
+    max-height: 255px;
+    overflow-y: auto;
+}
+.content-div .space-of-typing::-webkit-scrollbar{
+    width: 0;
+}
+.content-div .space-of-typing p{
+   font-size: 23px;
+   text-align: justify;
+   letter-spacing: 1px;
+   word-break: break-all;
+}
+.content-div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content-div .content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 17%;
+    text-align: center;
+    line-height: 32px;
+}
+/* designing UL part */
+.content .result{
+ padding: 19px;
+ border-radius: 10px;
+ background:linear-gradient(160deg,#DFBD69,#926F34) ;
+ display: block;
+ text-shadow: 0 0 2px rgb(0,0,0,1);
+}
+.content .result li{
+    border-bottom: 1px solid #ccc;
+    list-style: none;
+}
+
+.content .result li:last-child{
+    border-bottom: none;
+}
+.result li.time p,
+.result li.errors p,
+.result li.WPM p,
+.result li.CPM p{
+    font-weight: 600;
+}
+.wrapper-div button{
+    width: 71%;
+    position: absolute;
+    height: 17%;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background:linear-gradient(160deg,#D4AF37,#D7BE69);
+}
+.wrapper-div button:hover{
+    background:rgb(126, 76, 20) ;
+}
+.space-of-typing p span.correct{
+    color: rgb(15,235, 15);
+}
+.space-of-typing p span.incorrect{
+    color:rgb(236, 25, 25)
+}
+.space-of-typing p span.active{
+    color: #979494;
+}
+
+.space-of-typing p span.active::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background: #9af902;
+    animation: blink 1s ease-in-out infinite;
+    opacity: 0;
+}
+@keyframes blink{
+    50%{
+        opacity: 1;
+    }
+}
+.space-of-typing p span{
+    position: relative;
+}
