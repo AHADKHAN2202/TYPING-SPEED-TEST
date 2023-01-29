@@ -11,11 +11,11 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color: #ecf7f9;
+    background-color:#860d38;
     /* background-color: #000; */
 }
 .wrapper-div{
-    background: linear-gradient(160deg,rgb(100%, 84.3%, 0% ),#FFDE2E );
+    background: linear-gradient(160deg,rgb(252, 215, 3),#FFDE2E );
     color: #fff;
     width: 800px;
     border-radius: 10px;
@@ -28,6 +28,12 @@ body{
 .input-area{
     z-index:900;
     position: absolute;
+    width: 70%;
+    height:7vh;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: large;
 }
 .content-div .space-of-typing{
     max-width: 600px;
@@ -94,7 +100,7 @@ body{
     background:rgb(126, 76, 20) ;
 }
 .space-of-typing p span.correct{
-    color: rgb(15,235, 15);
+    color: rgb(61, 226, 31);
 }
 .space-of-typing p span.incorrect{
     color:rgb(236, 25, 25)
