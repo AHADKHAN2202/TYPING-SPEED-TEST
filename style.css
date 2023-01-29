@@ -112,7 +112,7 @@ body{
     width: 100%;
     background: #9af902;
     animation: blink 1s ease-in-out infinite;
-    opacity: 0;
+    opacity: 0; 
 }
 @keyframes blink{
     50%{
