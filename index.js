@@ -3,11 +3,8 @@ const input_area = document.querySelector('.wrapper-div .input-area');
 const error_msg = document.querySelector('.errors span');
 const time_msg = document.querySelector('.time span');
 const WPM_msg = document.querySelector('.WPM span');
-const CPM_msg = document.querySelector('.CPM span');
-// const NWPM_msg = document.querySelector('NWPM span');
+const NWPM_msg = document.querySelector('.NWPM span');
 const ACCURACY_msg = document.querySelector('.ACCURACY span');
-
-// const select_input = document.querySelector('#select');
 const button = document.querySelector('button');
 
 let letterIndex = 0;
@@ -102,7 +99,7 @@ function initTyping() {
 
         error_msg.innerText = errors;
 
-        CPM_msg.innerText = letterIndex - errors; // cpm not count errors
+        NWPM_msg.innerText = letterIndex - errors; // cpm not count errors
 
         let Wpm = Math.round((((letterIndex - errors) / 5) / (maxTime - timeLeft)) * 60);
     
@@ -110,7 +107,7 @@ function initTyping() {
 
         WPM_msg.innerText = Wpm;
 
-        let correctCharacters = CPM_msg.innerText;
+        let correctCharacters = NWPM_msg.innerText;
         let totalKey_pressed = paragraph[RandomIndex].split('').length;
         
       let  accuracy = Math.round((correctCharacters/totalKey_pressed)*100);
@@ -144,7 +141,7 @@ function resetTyping(){
     time_msg.innerText = timeLeft;
     error_msg.innerText = errors;
     WPM_msg.innerText = 0;
-    CPM_msg.innerText = 0;
+    NWPM_msg.innerText = 0;
     error_msg.innerText = 0;
     ACCURACY_msg.innerText = 0;
 }
@@ -156,43 +153,45 @@ button.addEventListener('click',resetTyping)
 // select part js
 
 
-const select = document.getElementById("select");
-// const prior = document.getElementsByClassName("option")[select].value;
+// const select = document.getElementById("select");
+// select.addEventListener('change',displayMsg);
 
-select.addEventListener('change',displayMsg);
+// function displayMsg(e){
+// //  if(e.classList.contains('option')){
+//     // console.log(e.target.value);
+//     if(e.target.value==='easy'){
+//         writing_text.innerHTML = "";
 
-function displayMsg(e){
-//  if(e.classList.contains('option')){
-    console.log(e.target.value);
-    if(e.target.value==='easy'){
-        writing_text.innerHTML = "";
+//         function RandomPara() {  // to get random paragraph
 
-        function RandomPara() {  // to get random paragraph
+//     // console.log(paragraph.);
 
-    // console.log(paragraph.);
-
-    RandomIndex = Math.floor(Math.random() * easy.length);
+//     RandomIndex = Math.floor(Math.random() * easy.length);
     
-    writing_text.innerHTML = "";
+//     writing_text.innerHTML = "";
 
-    easy[RandomIndex].split('').forEach((span) => {
+//     easy[RandomIndex].split('').forEach((span) => {
 
-        let spanTag = `<span>${span}</span>`;
+//         let spanTag = `<span>${span}</span>`;
 
-        writing_text.innerHTML += spanTag;
+//         writing_text.innerHTML += spanTag;
         
-        // console.log(spanTag.length);
-    });
+//         // console.log(spanTag.length);
+//     });
 
-    writing_text.querySelectorAll('span')[0].classList.add('active');
-      
-    document.addEventListener('keydown', () => input_area.focus());
+//     writing_text.querySelectorAll('span')[0].classList.add('active');
 
-    writing_text.addEventListener('click', () => input_area.focus());
+//     document.addEventListener('keydown', () => input_area.focus());
 
-}
+//     writing_text.addEventListener('click', () => input_area.focus());
 
-RandomPara();
-    }
-//  }
-}
+// }
+
+// RandomPara();
+//     }else if(e.target.value === "hard"){
+//        writing_text.innerHTML = "";
+
+
+//     }
+// //  }
+// }

@@ -11,7 +11,8 @@ body{
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    background-color:#860d38;
+    background-color: #fe9801;
+    /* background-color:#860d38; */
     /* background-color: #000; */
 }
 .wrapper-div{
@@ -81,7 +82,7 @@ body{
 .result li.time p,
 .result li.errors p,
 .result li.WPM p,
-.result li.CPM p{
+.result li.NWPM p{
     font-weight: 600;
 }
 .wrapper-div button{
